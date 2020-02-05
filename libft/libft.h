@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 14:00:11 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/01 00:59:07 by marvin           ###   ########.fr       */
+/*   Updated: 2020/02/05 21:08:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int				ft_catalog_delete(t_catalog **begin_catalog, int fd);
 t_catalog		*ft_catalog_find(t_catalog *begin_catalog, int fd);
 int				ft_isinteger(const char *str);
 int				ft_gnl(const int fd, char **line);
+int				ft_max(int a, int b);
+int				ft_min(int a, int b);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strdup(const char *s1);
 int				ft_strequ(const char *s1, const char *s2);

@@ -69,5 +69,6 @@ void	ft_list_clear(t_list **head)
 		current = *head;
 		*head = (*head)->next;
 		free(current);
+		current = NULL;
 	}
 }

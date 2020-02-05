@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:26:54 by hcaterpi          #+#    #+#              #
-#    Updated: 2020/02/01 00:57:02 by marvin           ###   ########.fr        #
+#    Updated: 2020/02/05 21:12:38 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,10 @@ SOURCE = 	ft_atoi.c \
 			ft_catalog_create.c \
 			ft_catalog_delete.c \
 			ft_catalog_find.c \
-			ft_gnl.c \
 			ft_isinteger.c \
+			ft_gnl.c \
+			ft_max.c \
+			ft_min.c \
 			ft_strcmp.c \
 			ft_strdup.c \
 			ft_strequ.c \

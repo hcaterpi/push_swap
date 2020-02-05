@@ -29,29 +29,6 @@ static int		ft_distributor(t_list **a, t_list **b, char *command)
 	return (0);
 }
 
-static int		ft_issorted(t_list *head)
-{
-	t_list	*buffer;
-
-	buffer = head;
-	while (head && head->next)
-	{
-		head = head->next;
-		if (buffer->number > head->number)
-			return (0);
-	}
-	return (1);
-}
-
-static int		ft_clean(t_list **a, t_list **b, int command)
-{
-	if (command == 1)
-		write(1, "Error\n", 6);
-	ft_list_clear(a);
-	ft_list_clear(b);
-	return (command);
-}
-
 int	 			main(int argc, char **argv)
 {
 	t_list	*a;
@@ -59,6 +36,8 @@ int	 			main(int argc, char **argv)
 	char	*buffer;
 	int		i;
 
+	if (argc == 1)
+		return (0);
 	a = NULL;
 	b = NULL;
 	i = 0;
@@ -70,11 +49,9 @@ int	 			main(int argc, char **argv)
 			return (ft_clean(&a, &b, 1));
 	}
 	while (ft_gnl(0, &buffer) > 0)
-	{
 		if (ft_distributor(&a, &b, buffer))
 			return (ft_clean(&a, &b, 1));
-	}
-	if (ft_issorted(a) && !b)
+	if (ft_issorted(&a) && !b)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
