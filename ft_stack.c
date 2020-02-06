@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    ft_swap(t_list **a, t_list **b)
+int		ft_swap(t_list **a, t_list **b)
 {
     t_list  *first;
     t_list  *second;
@@ -21,9 +21,10 @@ void    ft_swap(t_list **a, t_list **b)
         else if (buffer == b)
             buffer = NULL;
     }
+    return (0);
 }
 
-void    ft_push(t_list **a, t_list **b)
+int		ft_push(t_list **a, t_list **b)
 {
     t_list  *buffer;
 
@@ -34,9 +35,10 @@ void    ft_push(t_list **a, t_list **b)
         (*b) = (*a);
         (*a) = buffer;
     }
+    return (0);
 }
 
-void    ft_rotate(t_list **a, t_list **b)
+int		ft_rotate(t_list **a, t_list **b)
 {
     t_list  **buffer;
     t_list  *buf;
@@ -56,9 +58,10 @@ void    ft_rotate(t_list **a, t_list **b)
         else if (buffer == b)
             buffer = NULL;
     }
+    return (0);
 }
 
-void    ft_reverse_rotate(t_list **a, t_list **b)
+int		ft_reverse_rotate(t_list **a, t_list **b)
 {
     t_list  *current;
     t_list  *previous;
@@ -83,4 +86,5 @@ void    ft_reverse_rotate(t_list **a, t_list **b)
         else if (buffer == b)
             buffer = NULL;
     }
+    return (0);
 }

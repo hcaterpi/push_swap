@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:26:54 by hcaterpi          #+#    #+#              #
-#    Updated: 2020/02/05 21:15:40 by marvin           ###   ########.fr        #
+#    Updated: 2020/02/06 19:26:53 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ NAME_PUSH_SWAP = push_swap
 OBJECTS_PUSH_SWAP = $(SOURCE_PUSH_SWAP:.c=.o)
 
 SOURCE_PUSH_SWAP =	push_swap.c \
+					ft_insert.c \
+					ft_search.c \
 					ft_sort.c
 
 all: $(NAME_CHECKER) $(NAME_PUSH_SWAP)

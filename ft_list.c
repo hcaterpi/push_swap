@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_list	*ft_list_create(int number)
+static t_list	*ft_list_create(int number)
 {
 	t_list	*current;
 
@@ -13,7 +13,7 @@ t_list	*ft_list_create(int number)
 	return (current);
 }
 
-t_list	*ft_list_add(t_list **head, int number)
+t_list			*ft_list_add(t_list **head, int number)
 {
 	t_list	*current;
 
@@ -33,7 +33,7 @@ t_list	*ft_list_add(t_list **head, int number)
 	return (current);
 }
 
-int		ft_list_size(t_list *head)
+int				ft_list_size(t_list *head)
 {
 	int size;
 
@@ -46,7 +46,7 @@ int		ft_list_size(t_list *head)
 	return (size);
 }
 
-int		ft_list_find(t_list *head, int number)
+int				ft_list_find(t_list *head, int number)
 {
 	t_list	*current;
 
@@ -60,7 +60,7 @@ int		ft_list_find(t_list *head, int number)
 	return (0);
 }
 
-void	ft_list_clear(t_list **head)
+void			ft_list_clear(t_list **head)
 {
 	t_list *current;
 
