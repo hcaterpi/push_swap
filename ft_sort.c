@@ -52,7 +52,7 @@ static void		ft_normalize(t_list **a)
 	size = ft_list_size(*a);
 	if (head * 2 < size)
 	{
-		while (head-- && !ft_rotate(a, NULL))
+		while (head > 0 && head-- && !ft_rotate(a, NULL))
 			write(1, "ra\n", 3);
 	}
 	else
