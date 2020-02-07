@@ -8,7 +8,7 @@ int			ft_isinteger(const char *str)
     buffer = (char *)str;
 	if (*buffer == '-' || *buffer == '+')
         buffer++;
-    if ((length = ft_strlen(buffer)) > 10)
+    if ((length = ft_strlen(buffer)) > 10 || length == 0)
         return (0);
     while (*buffer)
     {
