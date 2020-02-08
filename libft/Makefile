@@ -6,17 +6,13 @@
 #    By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:26:54 by hcaterpi          #+#    #+#              #
-#    Updated: 2020/02/08 11:12:30 by hcaterpi         ###   ########.fr        #
+#    Updated: 2020/02/08 17:26:42 by hcaterpi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all objects clean fclean re
 
 NAME = libft.a
-
-DIRECTORY = ../
-
-TARGET = $(DIRECTORY)$(NAME)
 
 OBJECTS = $(SOURCE:.c=.o)
 
@@ -37,11 +33,11 @@ SOURCE = 	ft_atoi.c \
 			ft_strnew.c \
 			ft_strsub.c
 
-all: $(TARGET)
+all: $(NAME)
 
-$(TARGET): $(OBJECTS)
-	ar rc $@ $^
-	ranlib $@
+$(NAME): $(OBJECTS)
+	ar rc $(NAME) $^
+	ranlib $(NAME)
 
 $(OBJECTS): %.o : %.c libft.h
 	gcc -Wall -Wextra -Werror -c $<

@@ -6,7 +6,7 @@
 /*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 11:30:23 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/08 11:30:45 by hcaterpi         ###   ########.fr       */
+/*   Updated: 2020/02/08 17:31:19 by hcaterpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static int		ft_find_head(t_list **a)
 
 	buffer = *a;
 	current = buffer->number;
+	result = 0;
 	i = 0;
 	while (buffer)
 	{
