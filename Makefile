@@ -6,7 +6,7 @@
 #    By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:26:54 by hcaterpi          #+#    #+#              #
-#    Updated: 2020/02/08 12:00:42 by hcaterpi         ###   ########.fr        #
+#    Updated: 2020/02/08 13:40:27 by hcaterpi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,11 +55,7 @@ $(NAME_CHECKER): $(LIBFT) $(OBJECTS) $(OBJECTS_CHECKER)
 
 $(OBJECTS_CHECKER): %.o : %.c push_swap.h
 	$(CC) $(FLAGS) $(INCLUDE)  -c $<
-
-
-
-
-
+	
 $(NAME_PUSH_SWAP): $(LIBFT) $(OBJECTS) $(OBJECTS_PUSH_SWAP)
 	$(CC) $(FLAGS) $(INCLUDE_LIBRARY) -o $@ $(OBJECTS) $(OBJECTS_PUSH_SWAP)
 
