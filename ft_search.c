@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_search.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/08 11:29:41 by hcaterpi          #+#    #+#             */
+/*   Updated: 2020/02/08 11:29:59 by hcaterpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int		ft_ismaxposition(t_list **stack, int number)
@@ -56,7 +68,7 @@ static int		ft_calc_position(t_list **stack, int number)
 static int		ft_calc_value(t_list **a, t_list **b, int order, int position)
 {
 	int		result;
-	int 	size_a;
+	int		size_a;
 	int		size_b;
 
 	result = 0;

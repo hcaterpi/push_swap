@@ -3,16 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:26:54 by hcaterpi          #+#    #+#              #
-#    Updated: 2020/02/05 21:12:38 by marvin           ###   ########.fr        #
+#    Updated: 2020/02/08 11:12:30 by hcaterpi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all objects clean fclean re
 
 NAME = libft.a
+
+DIRECTORY = ../
+
+TARGET = $(DIRECTORY)$(NAME)
 
 OBJECTS = $(SOURCE:.c=.o)
 
@@ -33,19 +37,19 @@ SOURCE = 	ft_atoi.c \
 			ft_strnew.c \
 			ft_strsub.c
 
-all: $(NAME)
+all: $(TARGET)
 
-$(NAME): $(OBJECTS)
-	ar rc $(NAME) $^
-	ranlib $(NAME)
+$(TARGET): $(OBJECTS)
+	ar rc $@ $^
+	ranlib $@
 
 $(OBJECTS): %.o : %.c libft.h
-	@gcc -Wall -Wextra -Werror -c $<
+	gcc -Wall -Wextra -Werror -c $<
 
 clean:
 	/bin/rm -f $(OBJECTS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	/bin/rm -f $(DIRECTORY)$(NAME)
 
 re: fclean all

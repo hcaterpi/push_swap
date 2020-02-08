@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/08 11:16:29 by hcaterpi          #+#    #+#             */
+/*   Updated: 2020/02/08 11:18:14 by hcaterpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int		ft_distributor(t_list **a, t_list **b, char *command)
@@ -24,12 +36,12 @@ static int		ft_distributor(t_list **a, t_list **b, char *command)
 		ft_reverse_rotate(b, NULL);
 	else if (ft_strequ(command, "rrr"))
 		ft_reverse_rotate(a, b);
-	else	
+	else
 		return (1);
 	return (0);
 }
 
-int	 			main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;

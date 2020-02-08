@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_insert.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/08 11:27:49 by hcaterpi          #+#    #+#             */
+/*   Updated: 2020/02/08 11:28:34 by hcaterpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void		ft_rb_ra(t_list **a, t_list **b, t_number candidate)
 {
 	int		i;
 
-    i = ft_min(candidate.order, candidate.position);
+	i = ft_min(candidate.order, candidate.position);
 	while (i-- && !ft_rotate(a, b))
 		write(1, "rr\n", 3);
 	if (candidate.order > candidate.position)
@@ -39,7 +51,7 @@ static void		ft_rb_rra(t_list **a, t_list **b, t_number candidate)
 
 static void		ft_rrb_ra(t_list **a, t_list **b, t_number candidate)
 {
-	int		i;
+	int i;
 
 	i = ft_list_size(*b) - candidate.order;
 	while (i-- && !ft_reverse_rotate(b, NULL))

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/08 11:30:23 by hcaterpi          #+#    #+#             */
+/*   Updated: 2020/02/08 11:30:45 by hcaterpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void		ft_sort_triplet(t_list **stack)
@@ -61,10 +73,9 @@ static void		ft_normalize(t_list **a)
 		while (head-- && !ft_reverse_rotate(a, NULL))
 			write(1, "rra\n", 4);
 	}
-	
 }
 
-void	ft_sort(t_list **a, t_list **b)
+void			ft_sort(t_list **a, t_list **b)
 {
 	t_number	candidate;
 	int			size;

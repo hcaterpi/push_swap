@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_gnl.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/08 11:19:35 by hcaterpi          #+#    #+#             */
+/*   Updated: 2020/02/08 11:19:43 by hcaterpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_check_buffer(t_catalog **head, t_catalog *curr, char **line)
@@ -50,7 +62,7 @@ int			ft_gnl(const int fd, char **line)
 {
 	static t_catalog	*descriptors;
 	t_catalog			*curr;
-	int				sygnal;
+	int					sygnal;
 
 	if (fd < 0 || !line)
 		return (-1);

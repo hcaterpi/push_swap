@@ -3,16 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 14:26:54 by hcaterpi          #+#    #+#              #
-#    Updated: 2020/02/06 19:26:53 by marvin           ###   ########.fr        #
+#    Updated: 2020/02/08 12:00:42 by hcaterpi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all libft clean fclean re
 
+CC = gcc
+FLAGS = -Wall -Wextra -Werror
+
 LIBFT = libft
+
+INCLUDE = -I$(LIBFT)
+
+INCLUDE_LIBRARY = -L. -lft
 
 SOURCE =	ft_common.c \
 			ft_list.c \
@@ -36,32 +43,34 @@ SOURCE_PUSH_SWAP =	push_swap.c \
 					ft_sort.c
 
 all: $(NAME_CHECKER) $(NAME_PUSH_SWAP)
-	@echo 'Done'
 
 $(LIBFT):
-	@make -sC $(LIBFT)
+	make -C $(LIBFT)
 	
 $(OBJECTS): %.o : %.c push_swap.h
-	@gcc -Wall -Wextra -Werror -c $<
+	$(CC) $(FLAGS) $(INCLUDE) -c $<
  
 $(NAME_CHECKER): $(LIBFT) $(OBJECTS) $(OBJECTS_CHECKER)
-	@gcc -o $@ $(OBJECTS) $(OBJECTS_CHECKER) $(LIBFT)/$(LIBFT).a
+	$(CC) $(FLAGS) $(INCLUDE_LIBRARY) -o $@ $(OBJECTS) $(OBJECTS_CHECKER)
 
 $(OBJECTS_CHECKER): %.o : %.c push_swap.h
-	@gcc -Wall -Wextra -Werror -c $<
+	$(CC) $(FLAGS) $(INCLUDE)  -c $<
+
+
+
+
 
 $(NAME_PUSH_SWAP): $(LIBFT) $(OBJECTS) $(OBJECTS_PUSH_SWAP)
-	@gcc -o $@ $(OBJECTS) $(OBJECTS_PUSH_SWAP) $(LIBFT)/$(LIBFT).a
+	$(CC) $(FLAGS) $(INCLUDE_LIBRARY) -o $@ $(OBJECTS) $(OBJECTS_PUSH_SWAP)
 
 $(OBJECTS_PUSH_SWAP): %.o : %.c push_swap.h
-	@gcc -Wall -Wextra -Werror -c $<
+	$(CC) $(FLAGS) $(INCLUDE) -c $<
 
 clean:
-	@make clean -sC $(LIBFT)
-	@/bin/rm -f $(OBJECTS) $(OBJECTS_CHECKER) $(OBJECTS_PUSH_SWAP)
+	make clean -C $(LIBFT)
+	/bin/rm -f $(OBJECTS) $(OBJECTS_CHECKER) $(OBJECTS_PUSH_SWAP) $(LIBFT).a
 
 fclean: clean
-	@make fclean -sC $(LIBFT)
-	@/bin/rm -f $(NAME_CHECKER) $(NAME_PUSH_SWAP)
+	/bin/rm -f $(NAME_CHECKER) $(NAME_PUSH_SWAP)
 
 re: fclean all
