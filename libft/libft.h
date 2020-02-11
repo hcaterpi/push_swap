@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 14:00:11 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/05 21:08:56 by marvin           ###   ########.fr       */
+/*   Updated: 2020/02/10 14:20:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int				ft_isinteger(const char *str);
 int				ft_gnl(const int fd, char **line);
 int				ft_max(int a, int b);
 int				ft_min(int a, int b);
+void			ft_putstr(char *s);
+char			*ft_stradd(char *base, const char *addition);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strdup(const char *s1);
 int				ft_strequ(const char *s1, const char *s2);
