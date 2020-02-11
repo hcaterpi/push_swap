@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 11:21:43 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/11 13:34:24 by marvin           ###   ########.fr       */
+/*   Updated: 2020/02/11 15:51:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int		ft_isinteger(const char *str)
 		buffer++;
 	}
 	buffer = (char *)str;
-	if (ft_strlen(&buffer[index]) > 10 || (ft_strlen(&buffer[index]) == 10
+	if (ft_strlen(&buffer[index]) > 10 || ft_strlen(&buffer[index]) == 0
+	|| (ft_strlen(&buffer[index]) == 10
 	&& ((buffer[0] == '-' && ft_strcmp(&buffer[index], "2147483648") > 0)
 	|| ((buffer[0] != '-' && ft_strcmp(&buffer[index], "2147483647") > 0)))))
 		return (0);
