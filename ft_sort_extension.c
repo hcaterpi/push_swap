@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_extension.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/12 18:40:45 by hcaterpi          #+#    #+#             */
+/*   Updated: 2020/02/12 18:43:18 by hcaterpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void		ft_sort_triplet(t_list **stack, char **result)
@@ -102,7 +114,7 @@ char			*ft_optimized_sort(t_list **a, t_list **b)
 	t_list		*trash;
 	int			size;
 
-    result = ft_strnew(0);
+	result = ft_strnew(0);
 	size = ft_list_size(*a);
 	subsequence = ft_find_sequence(a);
 	trash = subsequence;

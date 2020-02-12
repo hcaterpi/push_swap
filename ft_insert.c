@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_insert.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 11:27:49 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/10 13:51:26 by marvin           ###   ########.fr       */
+/*   Updated: 2020/02/12 18:40:35 by hcaterpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void		ft_rb_ra(t_list **a, t_list **b, t_number candidate, char **result)
+static void		ft_rb_ra(t_list **a, t_list **b,
+				t_number candidate, char **result)
 {
 	int		i;
 
@@ -35,7 +36,8 @@ static void		ft_rb_ra(t_list **a, t_list **b, t_number candidate, char **result)
 	*result = ft_stradd(*result, "pa\n");
 }
 
-static void		ft_rb_rra(t_list **a, t_list **b, t_number candidate, char **result)
+static void		ft_rb_rra(t_list **a, t_list **b,
+				t_number candidate, char **result)
 {
 	int		i;
 
@@ -49,7 +51,8 @@ static void		ft_rb_rra(t_list **a, t_list **b, t_number candidate, char **result
 	*result = ft_stradd(*result, "pa\n");
 }
 
-static void		ft_rrb_ra(t_list **a, t_list **b, t_number candidate, char **result)
+static void		ft_rrb_ra(t_list **a, t_list **b,
+				t_number candidate, char **result)
 {
 	int i;
 
@@ -63,7 +66,8 @@ static void		ft_rrb_ra(t_list **a, t_list **b, t_number candidate, char **result
 	*result = ft_stradd(*result, "pa\n");
 }
 
-static void		ft_rrb_rra(t_list **a, t_list **b, t_number candidate, char **result)
+static void		ft_rrb_rra(t_list **a, t_list **b,
+				t_number candidate, char **result)
 {
 	int		size_a;
 	int		size_b;
@@ -92,7 +96,8 @@ static void		ft_rrb_rra(t_list **a, t_list **b, t_number candidate, char **resul
 	*result = ft_stradd(*result, "pa\n");
 }
 
-void			ft_insert_candidate(t_list **a, t_list **b, t_number candidate, char **result)
+void			ft_insert_candidate(t_list **a, t_list **b,
+				t_number candidate, char **result)
 {
 	if (candidate.order * 2 < ft_list_size(*b))
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 14:00:11 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/10 14:20:51 by marvin           ###   ########.fr       */
+/*   Updated: 2020/02/12 15:54:43 by hcaterpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ int				ft_max(int a, int b);
 int				ft_min(int a, int b);
 void			ft_putstr(char *s);
 char			*ft_stradd(char *base, const char *addition);
+int				ft_strclean(char **str);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strdup(const char *s1);
 int				ft_strequ(const char *s1, const char *s2);
 char			*ft_strjoin(char const *s1, char const *s2);
 size_t			ft_strlen(const char *s);
 char			*ft_strnew(size_t size);
+char			**ft_strsplit(char const *s, char c);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 
 #endif

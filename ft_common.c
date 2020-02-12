@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_common.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 11:26:54 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/10 14:37:28 by marvin           ###   ########.fr       */
+/*   Updated: 2020/02/12 18:38:58 by hcaterpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_issorted(t_list **head)
+int				ft_issorted(t_list **head)
 {
 	t_list	*buffer;
 
@@ -26,7 +26,31 @@ int		ft_issorted(t_list **head)
 	return (1);
 }
 
-int		ft_clean(t_list **a, t_list **b, int command)
+int				ft_input(int ac, char **av, t_list **a)
+{
+	char	**input;
+	int		i;
+	int		j;
+
+	i = 0;
+	while (++i < ac)
+	{
+		input = ft_strsplit(av[i], ' ');
+		j = 0;
+		while (input[j] != NULL)
+		{
+			if (ft_isinteger(input[j]) && !ft_list_find(*a, ft_atoi(input[j])))
+				ft_list_add(a, ft_atoi(input[j]));
+			else if (ft_strclean(input))
+				return (0);
+			j++;
+		}
+		ft_strclean(input);
+	}
+	return (1);
+}
+
+int				ft_clean(t_list **a, t_list **b, int command)
 {
 	if (command == 1)
 		write(2, "Error\n", 6);

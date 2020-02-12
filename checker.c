@@ -6,7 +6,7 @@
 /*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 11:16:29 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/08 13:43:01 by hcaterpi         ###   ########.fr       */
+/*   Updated: 2020/02/12 16:07:45 by hcaterpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,13 @@ int				main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 	char	*buffer;
-	int		i;
 
 	if (argc == 1)
 		return (0);
 	a = NULL;
 	b = NULL;
-	i = 0;
-	while (++i < argc)
-	{
-		if (ft_isinteger(argv[i]) && !ft_list_find(a, ft_atoi(argv[i])))
-			ft_list_add(&a, ft_atoi(argv[i]));
-		else
-			return (ft_clean(&a, &b, 1));
-	}
+	if (!ft_input(argc, argv, &a))
+		return (ft_clean(&a, &b, 1));
 	while (ft_gnl(0, &buffer) > 0)
 		if (ft_distributor(&a, &b, buffer))
 			return (ft_clean(&a, &b, 1));

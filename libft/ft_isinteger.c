@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isinteger.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 11:21:43 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/11 15:51:40 by marvin           ###   ########.fr       */
+/*   Updated: 2020/02/12 15:15:51 by hcaterpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_isinteger(const char *str)
 	index = 0;
 	if ((*buffer == '-' || *buffer == '+') && (index = 1))
 		buffer++;
-	while (*buffer == '0' && *(buffer+1) && ++index)
+	while (*buffer == '0' && *(buffer + 1) && ++index)
 		buffer++;
 	while (*buffer)
 	{
