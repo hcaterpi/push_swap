@@ -6,7 +6,7 @@
 /*   By: hcaterpi <hcaterpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 11:29:41 by hcaterpi          #+#    #+#             */
-/*   Updated: 2020/02/08 11:29:59 by hcaterpi         ###   ########.fr       */
+/*   Updated: 2020/02/15 14:52:42 by hcaterpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,28 @@ static int		ft_ismaxposition(t_list **stack, int number)
 
 static int		ft_calc_position(t_list **stack, int number)
 {
-	t_list	*buffer;
-	int		result;
-	int		diff;
-	int		i;
+	t_list		*buffer;
+	int			result;
+	long long	diff;
+	int			i;
 
 	if ((result = ft_ismaxposition(stack, number)))
 		return (result);
 	buffer = *stack;
-	diff = 2147483647;
+	diff = 9223372036854775807;
 	i = 0;
 	while (buffer)
 	{
-		if (number < buffer->number && diff > (buffer->number - number))
+		if (number < buffer->number
+			&& diff > ((long)(buffer->number) - (long)number))
 		{
 			result = i;
-			diff = buffer->number - number;
+			diff = (long)(buffer->number) - (long)number;
 		}
 		buffer = buffer->next;
 		i++;
 	}
-	if (!buffer && diff == 2147483647)
+	if (!buffer && diff == 9223372036854775807)
 		result = i;
 	return (result);
 }
